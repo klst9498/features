@@ -3,8 +3,6 @@ set -e
 
 echo "Activating feature 'ROS2'"
 # Read values from the JSON file using jq
-DISTRO=$(jq -r '.options.distro.default' devcontainer-feature.json)
-PACKAGE=$(jq -r '.options.package.default' devcontainer-feature.json)
 
 DISTRO=${DISTRO:-undefined}
 echo "The ROS2 distro is: $DISTRO"
