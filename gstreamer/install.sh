@@ -1,5 +1,5 @@
 # Install required system dependencies for .deb file
-apt update && apt install -y 
+apt update && apt install -y \
     libgl1 \
     ffmpeg \
     libsm6 \
