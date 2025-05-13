@@ -3,7 +3,7 @@ RUN apt update && apt install -y
     libgl1 \
     ffmpeg \
     libsm6 \
-    libxext6
+    libxext6 \
     gstreamer1.0-tools \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
