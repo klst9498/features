@@ -56,6 +56,7 @@ apt-get install -y \
   ros-jazzy-joint-trajectory-controller \
   python3-colcon-common-extensions \
   ros-jazzy-ros2-control \
+  ros-jazzy-py-binding-tools \
   ros-jazzy-trac-ik-kinematics-plugin
 
 echo "source /opt/ros/${DISTRO}/setup.bash" >> $_REMOTE_USER_HOME/.bashrc
