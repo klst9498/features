@@ -19,10 +19,20 @@ export LANG=en_US.UTF-8
 
 # Add the ROS2 apt-get repository
 apt-get install -y software-properties-common
-add-apt-repository universe
+add-apt-repository universe -y
+apt-get update && apt-get install -y \
+  python3-tk \
+  git \
+  cmake \
+  build-essential \
+  libssl-dev \
+  curl \
+  pkg-config \
+  uuid-dev \
+  libserial-dev \
+  nlohmann-json3-dev
 
 # Add the ROS2 GPG key
-apt-get update && apt-get install -y curl
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 # Add the repository to your sources list
@@ -30,8 +40,24 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 
 # Install development tools and ROS tools
 apt-get update
-apt-get install -y ros-${DISTRO}-${PACKAGE} ros-dev-tools python3-argcomplete
+apt-get install -y \
+  ros-${DISTRO}-${PACKAGE} \
+  ros-dev-tools python3-argcomplete \
+  ros-jazzy-rqt-graph \
+  ros-jazzy-rqt \
+  ros-jazzy-xacro \
+  ros-jazzy-joint-state-publisher \
+  ros-jazzy-joint-state-publisher-gui \
+  ros-jazzy-rviz2 \
+  ros-jazzy-controller-manager \
+  ros-jazzy-moveit* \
+  ros-jazzy-moveit-py \
+  ros-jazzy-joint-state-broadcaster \
+  ros-jazzy-joint-trajectory-controller \
+  python3-colcon-common-extensions \
+  ros-jazzy-ros2-control \
+  ros-jazzy-trac-ik-kinematics-plugin
 
 echo "source /opt/ros/${DISTRO}/setup.bash" >> $_REMOTE_USER_HOME/.bashrc
 
-export DEBIAN_FRONTEND=
+export DEBIAN_FRONTEND=noninteractive
